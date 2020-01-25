@@ -16,6 +16,7 @@ final class ImageTests: XCTestCase {
     func testImageWithReference() {
         let html = MarkdownParser().html(from: """
         ![][url]
+
         [url]: https://swiftbysundell.com
         """)
 
@@ -35,6 +36,7 @@ final class ImageTests: XCTestCase {
     func testImageWithReferenceAndAltText() {
         let html = MarkdownParser().html(from: """
         ![Alt text][url]
+
         [url]: swiftbysundell.com
         """)
 
@@ -44,6 +46,7 @@ final class ImageTests: XCTestCase {
     func testImageWithReferenceAndAltTextAndTitle() {
         let html = MarkdownParser().html(from: """
         ![Alt text][url]
+
         [url]: swiftbysundell.com    'Swift by Sundell'
         """)
 
@@ -53,6 +56,7 @@ final class ImageTests: XCTestCase {
     func testImageWithReferenceAndAltTextAndNewlineTitle() {
         let html = MarkdownParser().html(from: """
         ![Alt text][url]
+
         [url]: swiftbysundell.com
               (Swift by Sundell)
         """)
